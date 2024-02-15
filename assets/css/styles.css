@@ -6,10 +6,10 @@
   --header-height: 3rem;
 
   /*========== Colors ==========*/
-  --hue: 333;
-  --sat: 83%;
+  --hue: 340;
+  --sat: 69%;
 
-  --first-color: hsl(var(--hue), var(--sat), 49%);
+  --first-color: hsl(var(--hue), var(--sat), 61%);
   --first-color-alt: hsl(var(--hue), var(--sat), 36%);
   --title-color: hsl(var(--hue), 12%, 15%);
   --text-color: hsl(var(--hue), 8%, 35%);
@@ -20,6 +20,7 @@
   --body-font: 'Plus Jakarta Sans', sans-serif;
 
   --h1-font-size: 1.5rem;
+  --h2-font-size: 1.05rem;
   --normal-font-size: .938rem;
   --tiny-font-size: .625rem;
 
@@ -90,6 +91,12 @@ img {
   margin-right: 1rem;
 }
 
+.grid {
+	display: grid;
+	gap: 1.5rem;
+}
+
+
 /*=============== HEADER ===============*/
 .header {
   position: fixed;
@@ -138,6 +145,11 @@ img {
     border-radius: 1.25rem 1.25rem 0 0;
     transition: .4s;
   }
+
+  .container {
+    max-width: 1000px;
+    width: 90%;
+  }
 }
 
 .nav__img-logo {
@@ -175,7 +187,110 @@ img {
   transition: .3s;
 }
 
-/* Minimalist design, active link */
+
+/* ===home===== */
+button {
+  cursor: pointer;
+  padding: .35rem .8rem;
+}
+.home__container {
+  padding: 1rem 2rem 0 2rem;
+  max-width: 800px;
+  margin-top: 4rem;
+}
+
+.home__header {
+  display: flex;
+}
+
+.hello__text {
+  color: #000;
+  font-weight: 500;
+  font-size: var(--h1-font-size);
+}
+
+.welcome__text {
+  font-weight: 600;
+  color: #000;
+  font-size: var(--h2-font-size);
+}
+
+.home__clubname {
+  font-weight: 600;
+  color: var(--first-color);
+  font-size: var(--h2-font-size);
+}
+
+.clbname-tick {
+  color: #0097FE;
+}
+
+.join__button {
+  font-family: var(--body-font);
+  display: inline-flex;
+  align-items: center;
+  margin-top: .6rem;
+  font-size: var(--normal-font-size);
+  background-color: var(--first-color);
+  border: none;
+  color: var(--body-color);
+  border-radius: 20px;
+}
+
+.join__button:hover {
+  background-color: var(--first-color-alt);
+  transition: .3s;
+  transform: scale(1.05);
+}
+
+.join__button-icon {
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--body-color);
+}
+.join__button-text {
+  margin-left: 3px;
+  font-weight: 500;
+}
+
+.social__link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.social__icon {
+  color: var(--body-color);
+  padding: .05rem;
+  background-color: var(--text-color);
+  border-radius: 10%;
+  font-size: 1rem;
+}
+
+.social__icon:hover {
+  background-color: var(--first-color-alt);
+  transition: .3s;
+}
+
+.social__text:hover {
+  color: var(--first-color-alt);
+  transition: .3s;
+}
+.social__text {
+  color: var(--text-color);
+  margin-left: .3rem;
+  font-weight: 500;
+  font-size: var(--normal-font-size);
+}
+
+
+
+
+
+
+
+
+
 
 
 /* Change background header */
@@ -235,4 +350,11 @@ img {
   .nav__img-logo {
     height: 40px;
   }
+  .home__container {
+    padding: 4rem 4rem 4rem 4rem;
+  }
 }
+
+
+
+
