@@ -194,7 +194,6 @@ button {
   padding: .35rem .8rem;
 }
 .home__container {
-  width: 100%;
   padding: 1rem .5rem 0 .5rem;
   max-width: 800px;
   margin-top: 4rem;
@@ -284,7 +283,7 @@ button {
 .homebanner__img {
   margin: 3rem 0 0 0;
   display: block;
-  width: 65%;
+  width: 75%;
 }
 
 .home__header {
@@ -317,6 +316,12 @@ button {
   .nav__list {
     justify-content: center;
     column-gap: 3rem;
+  }
+  .home__container {
+    padding: 2rem 0rem 0rem 0rem;
+  }
+  .homebanner__img {
+    width: 40%;
   }
 }
 
@@ -351,6 +356,12 @@ button {
     height: 4px;
     background-color: var(--first-color);
     border-radius: 50%;
+  }
+  .home__container {
+    padding: 3rem 0rem 0rem 0rem;
+  }
+  .homebanner__img {
+    width: 40%;
   }
 }
 
