@@ -250,7 +250,12 @@ button {
   font-weight: 500;
 }
 
+.social__home {
+  margin-top: .5rem;
+}
+
 .social__link {
+  margin-top: .1rem;
   display: inline-flex;
   align-items: center;
   text-decoration: none;
@@ -301,6 +306,12 @@ button {
   align-items: flex-start;
 }
 
+/* ===Document===== */
+.atv__container {
+  padding: 1rem .5rem 0 .5rem;
+  max-width: 800px;
+  margin-top: 4rem;
+}
 
 
 
