@@ -317,6 +317,14 @@ button {
   text-align: center;
 }
 
+.atv__header-img {
+  width: 80%;
+}
+
+.atv__card {
+  border: 1px solid var(--first-color-alt);
+  border-radius: 5px;
+}
 
 
 
