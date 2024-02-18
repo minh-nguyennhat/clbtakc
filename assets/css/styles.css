@@ -289,7 +289,7 @@ button {
 .homebanner__img {
   margin: 3rem 0 0 0;
   display: block;
-  width: 75%;
+  width: 60%;
 }
 
 .home__header {
@@ -446,7 +446,7 @@ button {
     padding-top: 3rem;
   }
   .atv__header-img {
-    width: 65%;
+    width: 55%;
   }
 }
 
@@ -486,7 +486,7 @@ button {
     padding: 3rem 0rem 0rem 0rem;
   }
   .homebanner__img {
-    width: 40%;
+    width: 30%;
   }
   .atv__container {
     padding-top: 4rem;
@@ -507,7 +507,7 @@ button {
     padding: 4rem 0rem 0rem 0rem;
   }
   .homebanner__img {
-    width: 35%;
+    width: 30%;
   }
   .home__header {
     flex-direction: row;
