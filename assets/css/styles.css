@@ -364,12 +364,12 @@ button {
   margin-bottom: 5px;
 }
 .atv__status {
-  font-weight: 500;
+  font-weight: 600;
   display: flex;
   padding: 3px 14px;
-  color: #fff;
+  color: #157a6e;
   font-size: 13px;
-  background-color: #03C988;
+  background-color: #b7e4c7;
   border-radius: 4px;
 }
 
