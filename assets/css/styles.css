@@ -333,15 +333,16 @@ button {
   display: flex;
   flex-direction: column;
   max-width: 600px;
-  padding: 10px 20px;
+  padding: 15px 20px;
   border: 1px solid #F9F5F6;
   background-color: #F8E8EE;
-  border-radius: 5px;
+  border-radius: 10px;
+  border: 1px solid #FFE7E7;
 }
 
 
-
 .atv__title {
+  color: var(--first-color-alt);
   margin-bottom: 8px;
   font-size: var(--h2-font-size);
   font-weight: 700;
@@ -357,6 +358,7 @@ button {
   font-size: 13px;
 }
 .atv__date {
+  color: #000;
   display: flex;
   align-items: center;
   margin-bottom: 5px;
@@ -364,11 +366,11 @@ button {
 .atv__status {
   font-weight: 500;
   display: flex;
-  padding: 2px 18px;
+  padding: 3px 14px;
   color: #fff;
-  font-size: 14px;
-  background-color: #37B5B6;
-  border-radius: 6px;
+  font-size: 13px;
+  background-color: #03C988;
+  border-radius: 4px;
 }
 
 .atv_info {
@@ -391,6 +393,12 @@ button {
   align-items: center;
 }
 
+.atv__button-link:hover {
+  background-color: #0079FF;
+  transition: .3s;
+  transform: scale(1.05);
+}
+
 .atv__button {
   font-family: var(--body-font);
   display: inline-flex;
@@ -403,6 +411,12 @@ button {
   font-size: 1.2rem;
   color: #fff;
 }
+
+.atv__button:hover {
+  transition: .3s;
+  transform: scale(1.05);
+}
+
 
 .atv__button-text {
   color: #fff;
