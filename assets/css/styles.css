@@ -149,6 +149,8 @@ img {
     max-width: 1200px;
     width: 90%;
   }
+
+  
 }
 
 .nav__img-logo {
@@ -307,9 +309,11 @@ button {
 
 /* ===Document===== */
 .atv__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 1rem .5rem 0 .5rem;
-  max-width: 800px;
-  margin-top: 4rem;
+  width: 100%;
 }
 
 .atv__header-title {
@@ -317,16 +321,95 @@ button {
 }
 
 .atv__header-img {
-  width: 80%;
+  display: block;
+  margin: auto;
+  align-items: center;
+  width: 65%;
 }
 
 .atv__card {
-  border: 1px solid var(--first-color-alt);
+  width: 90%;
+  margin: 25px auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  padding: 10px 20px;
+  border: 1px solid #F9F5F6;
+  background-color: #F8E8EE;
   border-radius: 5px;
 }
 
 
 
+.atv__title {
+  margin-bottom: 8px;
+  font-size: var(--h2-font-size);
+  font-weight: 700;
+}
+
+.date__icon {
+  display: inline-flex;
+}
+
+.date__label {
+  font-weight: 500;
+  margin-left: 3px;
+  font-size: 13px;
+}
+.atv__date {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.atv__status {
+  font-weight: 500;
+  display: flex;
+  padding: 2px 18px;
+  color: #fff;
+  font-size: 14px;
+  background-color: #37B5B6;
+  border-radius: 6px;
+}
+
+.atv_info {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.atv__subtitle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.atv__button-link {
+  background-color: #00A9FF;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.atv__button {
+  font-family: var(--body-font);
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+}
+
+.download__icon {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.atv__button-text {
+  color: #fff;
+  margin-left: 5px;
+  font-size: var(--normal-font-size);
+  font-weight: 500;
+}
 /* Change background header */
 .scroll-header {
   box-shadow: 0 1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
@@ -344,6 +427,12 @@ button {
   }
   .homebanner__img {
     width: 40%;
+  }
+  .atv__container {
+    padding-top: 3rem;
+  }
+  .atv__header-img {
+    width: 65%;
   }
 }
 
@@ -385,6 +474,9 @@ button {
   .homebanner__img {
     width: 40%;
   }
+  .atv__container {
+    padding-top: 4rem;
+  }
 }
 
 /* For large devices */
@@ -409,6 +501,10 @@ button {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1.5rem;
+  }
+  .atv__card {
+    max-width: 1000px;
+    width: 90%;
   }
 }
 
