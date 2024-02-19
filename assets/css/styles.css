@@ -417,13 +417,17 @@ button {
 }
 
 .atv__button-link-o {
-  background-color: #6b6b6b;
+  margin-top: auto;
+  background-color: #323232;
   border: none;
-  border-radius: 10px;
+  border-radius: 30px;
   color: #fff;
   display: flex;
   align-items: center;
+  height: 35px;
 }
+
+
 .atv__button-link:hover {
   background-image: radial-gradient(circle at 10% 20%, rgb(99, 55, 255) 0%, rgb(39, 170, 255) 90%);
   transition: .3s;
