@@ -425,7 +425,7 @@ button {
   align-items: center;
 }
 .atv__button-link:hover {
-  background-color: #1640D6;
+  background-image: radial-gradient(circle at 10% 20%, rgb(99, 55, 255) 0%, rgb(39, 170, 255) 90%);
   transition: .3s;
 }
 
