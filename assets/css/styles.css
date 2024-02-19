@@ -316,7 +316,16 @@ button {
   width: 100%;
 }
 
+.atv__header {
+  text-align: center;
+}
+
 .atv__header-title {
+  background: radial-gradient(circle at 1.2% 5.3%, rgb(255, 85, 166) 0%, rgb(255, 154, 98) 100.2%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+  font-weight: 900;
+  font-size: 20px;
   text-align: center;
 }
 
@@ -335,14 +344,14 @@ button {
   max-width: 600px;
   padding: 15px 20px;
   border: 1px solid #F9F5F6;
-  background-color: #F8E8EE;
+  background-color: #FAFAFA;
   border-radius: 10px;
-  border: 1px solid #FFE7E7;
+  box-shadow: 0 1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
 }
 
 
 .atv__title {
-  color: var(--first-color-alt);
+  color: #000;
   margin-bottom: 8px;
   font-size: var(--h2-font-size);
   font-weight: 700;
@@ -363,13 +372,23 @@ button {
   align-items: center;
   margin-bottom: 5px;
 }
-.atv__status {
+.atv__status-i {
   font-weight: 600;
   display: flex;
   padding: 3px 14px;
-  color: #157a6e;
+  color: #FFF;
   font-size: 13px;
-  background-color: #b7e4c7;
+  background-color: #2dc653;
+  border-radius: 4px;
+}
+
+.atv__status-o {
+  font-weight: 600;
+  display: flex;
+  padding: 3px 14px;
+  color: #FFF;
+  font-size: 13px;
+  background-color: #ebb523;
   border-radius: 4px;
 }
 
@@ -385,18 +404,18 @@ button {
 }
 
 .atv__button-link {
-  background-color: #00A9FF;
+  background-image: linear-gradient(89.8deg, rgb(39, 115, 255) 4.3%, rgb(62, 211, 232) 101.4%);
   border: none;
   border-radius: 10px;
   color: #fff;
   display: flex;
   align-items: center;
+  box-shadow: 0 1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
 }
 
 .atv__button-link:hover {
-  background-color: #0079FF;
+  background-image: linear-gradient(89.8deg, rgb(39, 115, 255) 4.3%, rgb(62, 211, 232) 101.4%);
   transition: .3s;
-  transform: scale(1.05);
 }
 
 .atv__button {
@@ -414,7 +433,6 @@ button {
 
 .atv__button:hover {
   transition: .3s;
-  transform: scale(1.05);
 }
 
 
@@ -424,6 +442,7 @@ button {
   font-size: var(--normal-font-size);
   font-weight: 500;
 }
+
 /* Change background header */
 .scroll-header {
   box-shadow: 0 1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
@@ -499,12 +518,15 @@ button {
     margin-left: auto;
     margin-right: auto;
   }
+
   .nav__img-logo {
     height: 40px;
   }
+
   .home__container {
     width: 60%;
     padding: 4rem 0rem 0rem 0rem;
+
   }
   .homebanner__img {
     width: 30%;
