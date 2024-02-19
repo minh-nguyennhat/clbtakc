@@ -10,9 +10,18 @@ function scrollHeader(){
 window.addEventListener('scroll', scrollHeader)
 
 // =====show alert =====
+// window.onload = function() {
+//     var button = document.querySelector('.atv__button-link-o');
+//     button.addEventListener('click', function() {
+//         alert('Hiện chưa có danh sách, không thể tải xuống');
+//     });
+// }
+
 window.onload = function() {
     var button = document.querySelector('.atv__button-link-o');
+    var toast = document.getElementById('toast');
     button.addEventListener('click', function() {
-        alert('Hiện chưa có danh sách, không thể tải xuống');
+      toast.className = "show";
+      setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
     });
-}
+  }
