@@ -22,6 +22,6 @@ window.onload = function() {
     var toast = document.getElementById('toast');
     button.addEventListener('click', function() {
       toast.className = "show";
-      setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+      setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 2000);
     });
   }
