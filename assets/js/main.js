@@ -8,3 +8,11 @@ function scrollHeader(){
     if(this.scrollY >= 80) header.classList.add('scroll-header'); else header.classList.remove('scroll-header')
 }
 window.addEventListener('scroll', scrollHeader)
+
+// =====show alert =====
+window.onload = function() {
+    var button = document.querySelector('.atv__button-link-o');
+    button.addEventListener('click', function() {
+        alert('Hiện chưa có danh sách, không thể tải xuống');
+    });
+}

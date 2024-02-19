@@ -312,7 +312,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0rem .5rem 0 .5rem;
+  padding: 0rem .5rem 4rem .5rem;
   width: 100%;
 }
 
@@ -346,15 +346,17 @@ button {
   border: 1px solid #F9F5F6;
   background-color: #FAFAFA;
   border-radius: 10px;
-  box-shadow: 0 1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
+  box-shadow: 0 1px 10px hsla(var(--hue), var(--sat), 15%, 0.16);
 }
 
 
 .atv__title {
-  color: #000;
+  background: linear-gradient(118.4deg, rgb(122, 35, 52) 27.5%, rgb(62, 9, 27) 92.7%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
   margin-bottom: 8px;
   font-size: var(--h2-font-size);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .date__icon {
@@ -385,7 +387,7 @@ button {
 .atv__status-o {
   font-weight: 600;
   display: flex;
-  padding: 3px 14px;
+  padding: 3px 9px;
   color: #FFF;
   font-size: 13px;
   background-color: #ebb523;
@@ -404,12 +406,14 @@ button {
 }
 
 .atv__button-link {
-  background-color: #00A9FF;
+  margin-top: auto;
+  background-image: linear-gradient(89.8deg, rgb(39, 115, 255) 4.3%, rgb(62, 211, 232) 101.4%);
   border: none;
-  border-radius: 10px;
+  border-radius: 30px;
   color: #fff;
   display: flex;
   align-items: center;
+  height: 35px;
 }
 
 .atv__button-link-o {
