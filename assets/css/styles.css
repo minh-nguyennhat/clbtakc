@@ -367,7 +367,7 @@ button {
   font-size: 13px;
 }
 .atv__date {
-  color: #000;
+  color: #323232;
   display: flex;
   align-items: center;
   margin-bottom: 5px;
@@ -404,17 +404,24 @@ button {
 }
 
 .atv__button-link {
-  background-image: linear-gradient(89.8deg, rgb(39, 115, 255) 4.3%, rgb(62, 211, 232) 101.4%);
+  background-color: #00A9FF;
   border: none;
   border-radius: 10px;
   color: #fff;
   display: flex;
   align-items: center;
-  box-shadow: 0 1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
 }
 
+.atv__button-link-o {
+  background-color: #6b6b6b;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
 .atv__button-link:hover {
-  background-image: linear-gradient(89.8deg, rgb(39, 115, 255) 4.3%, rgb(62, 211, 232) 101.4%);
+  background-color: #1640D6;
   transition: .3s;
 }
 
