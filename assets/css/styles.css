@@ -583,9 +583,20 @@ button {
 
 #toast.show {
   visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
 .icon__toast{ 
   font-size: 24px;
 }
 
+.comingsoon {
+  font-size: 20px;
+  margin-top: 6rem;
+  text-align: center;
+}
+
+.bxs-ghost {
+  font-size: 36px;
+}

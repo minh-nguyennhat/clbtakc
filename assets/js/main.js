@@ -8,11 +8,20 @@ function scrollHeader(){
     if(this.scrollY >= 80) header.classList.add('scroll-header'); else header.classList.remove('scroll-header')
 }
 window.addEventListener('scroll', scrollHeader)
-
+// ===show toast====
+window.onload = function() {
+  var buttons = document.querySelectorAll('.atv__button_link_o');
+  var toast = document.getElementById('toast');
+  buttons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      toast.className = "show";
+      setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 2000);
+    });
+  });
+}
 
 // ===show atv====
-// Replace with the path to your JSON file
-// Replace with the path to your JSON file
+
 // Replace with the path to your JSON file
 fetch('./assets/database/atv.json')
   .then(response => response.json())
@@ -59,14 +68,3 @@ fetch('./assets/database/atv.json')
     });
   });
 
-// ===show toast====
-window.onload = function() {
-  var buttons = document.querySelectorAll('.atv__button_link_o');
-  var toast = document.getElementById('toast');
-  buttons.forEach(function(button) {
-    button.addEventListener('click', function() {
-      toast.className = "show";
-      setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 2000);
-    });
-  });
-}
