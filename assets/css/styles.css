@@ -343,15 +343,15 @@ button {
   flex-direction: column;
   max-width: 600px;
   padding: 15px 20px;
-  border: 1px solid #F9F5F6;
-  background-color: #FAFAFA;
+  border: 1px solid #ffecf1;
+  background-color: #fff4f7;
   border-radius: 10px;
   box-shadow: 0 1px 10px hsla(var(--hue), var(--sat), 15%, 0.16);
 }
 
 
 .atv__title {
-  background: linear-gradient(118.4deg, rgb(122, 35, 52) 27.5%, rgb(62, 9, 27) 92.7%);
+  background: rgb(62, 9, 27);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
   margin-bottom: 8px;
@@ -369,7 +369,7 @@ button {
   font-size: 13px;
 }
 .atv__date {
-  color: #323232;
+  color: #7e7e7e;
   display: flex;
   align-items: center;
   margin-bottom: 5px;
@@ -377,7 +377,7 @@ button {
 .atv__status_i {
   font-weight: 600;
   display: flex;
-  padding: 3px 14px;
+  padding: 3px 9px;
   color: #FFF;
   font-size: 13px;
   background-color: #2dc653;
