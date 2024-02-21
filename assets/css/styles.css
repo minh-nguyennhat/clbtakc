@@ -576,32 +576,6 @@ button {
 }
 
 /* ====toast==== */
-#toast {
-  border: 1px solid #FFE4C9;
-  font-weight: 600;
-  font-family: var(--body-font);
-  box-shadow: 0 1px 10px hsla(var(--hue), var(--sat), 15%, 0.2);
-  visibility: hidden;
-  min-width: 250px;
-  background-color: #FFF7F1;
-  color: #D24545;
-  text-align: center;
-  border-radius: 20px;
-  padding: 14px;
-  position: fixed;
-  z-index: 1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 16px;
-  transition: visibility 0.5s, opacity 0.5s linear;
-}
-
-#toast.show {
-  visibility: visible;
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
 
 .icon__toast{ 
   font-size: 24px;
