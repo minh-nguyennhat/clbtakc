@@ -12,7 +12,7 @@
   --first-color-alt: hsl(var(--hue), var(--sat), 36%);
   --title-color: hsl(var(--hue), 12%, 15%);
   --text-color: hsl(var(--hue), 8%, 35%);
-  --body-color: #fff;
+  --body-color: #fdfdfd;
   --container-color: #FFF;
 
   /*========== Font and typography ==========*/
@@ -343,7 +343,7 @@ button {
   flex-direction: column;
   max-width: 600px;
   padding: 15px 20px;
-  border: 1px solid #f1f1f1;
+  border: 1px solid #e4e4e4;
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 1px 10px hsla(var(--hue), var(--sat), 15%, 0.16);
