@@ -1,6 +1,5 @@
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 
-
 /*=============== CHANGE BACKGROUND HEADER ===============*/
 function scrollHeader(){
     const header = document.getElementById('header')
@@ -8,6 +7,7 @@ function scrollHeader(){
     if(this.scrollY >= 80) header.classList.add('scroll-header'); else header.classList.remove('scroll-header')
 }
 window.addEventListener('scroll', scrollHeader)
+
 // ===show toast====
 window.onload = function() {
   var buttons = document.querySelectorAll('.atv__button_link_o');
@@ -19,8 +19,6 @@ window.onload = function() {
     });
   });
 }
-
-// ===show atv====
 
 // Replace with the path to your JSON file
 fetch('./assets/database/atv.json')

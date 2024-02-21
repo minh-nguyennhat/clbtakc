@@ -417,6 +417,7 @@ button {
 }
 
 .atv__button_link_o {
+  cursor: help;
   margin-top: auto;
   background-color: #b6b6b6;
   border: none;
@@ -427,8 +428,12 @@ button {
   height: 35px;
 }
 
+.atv__button_link_o:hover {
+  cursor: help;
+}
 
-.atv__button_link:hover {
+
+.atv__button_link_i:hover {
   background-image: radial-gradient(circle at 10% 20%, rgb(99, 55, 255) 0%, rgb(39, 170, 255) 90%);
   transition: .3s;
 }
@@ -559,6 +564,17 @@ button {
   }
 }
 
+
+.comingsoon {
+  font-size: 20px;
+  margin-top: 6rem;
+  text-align: center;
+}
+
+.bxs-ghost {
+  font-size: 36px;
+}
+
 /* ====toast==== */
 #toast {
   border: 1px solid #FFE4C9;
@@ -589,14 +605,4 @@ button {
 
 .icon__toast{ 
   font-size: 24px;
-}
-
-.comingsoon {
-  font-size: 20px;
-  margin-top: 6rem;
-  text-align: center;
-}
-
-.bxs-ghost {
-  font-size: 36px;
 }
