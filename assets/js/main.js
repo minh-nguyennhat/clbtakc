@@ -65,4 +65,3 @@ fetch('./assets/database/atv.json')
       container.appendChild(card);
     });
   });
-

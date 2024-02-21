@@ -229,7 +229,8 @@ button {
   align-items: center;
   margin-top: .6rem;
   font-size: var(--normal-font-size);
-  background-color: var(--first-color);
+  /* background-color: var(--first-color); */
+  background-image: linear-gradient(to right, rgb(248, 87, 166), rgb(255, 88, 88));
   border: none;
   color: var(--body-color);
   border-radius: 20px;
