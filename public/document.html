@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== BOXICONS ===============-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="./assets/css/styles.css">
+        <link rel="icon" type="image/x-icon" href="./assets/img/fav.png">
+        <title>Danh sách | CLB Tiếng Anh Không Chuyên TVU</title>
+    </head>
+    <body>
+        <!--=============== HEADER ===============-->
+        <!-- ======VÔ SOI SOURCE LÀM GIỀ HEHE==== -->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">
+                    <img src="./assets/img/logoclbtakc.png" alt="" class="nav__img-logo">
+                </a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="index.html" class="nav__link">
+                                <i class='bx bx-home-alt nav__icon'></i>
+                                <span class="nav__name">Trang chủ</span>
+                            </a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="document.html" class="nav__link active-link">
+                                <i class='bx bx-file nav__icon' ></i>
+                                <span class="nav__name">Danh sách</span>
+                            </a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="course.html" class="nav__link">
+                                <i class='bx bx-book-reader nav__icon'></i>
+                                <span class="nav__name">Khoá học</span>
+                            </a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="utilities.html" class="nav__link">
+                                <i class='bx bx-customize nav__icon'></i>
+                                <span class="nav__name">Tiện ích</span>
+                            </a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="info.html" class="nav__link">
+                                <i class='bx bx-user nav__icon'></i>
+                                <span class="nav__name">Thông tin</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <img src="./assets/img/logotvu.png" alt="" class="nav__img">
+            </nav>
+        </header>
+
+        <main>
+            <div class="atv__container" >
+                <div class="avt__content">
+                    <div class="atv__header">
+                        <img src="./assets/img/atvheaderimg.svg" alt="" class="atv__header-img">
+                        <span class="atv__header-title">DANH SÁCH GIẤY XÁC NHẬN</span>
+                    </div>
+                    <div class="atv__list">
+
+                        <!-- This is your template card. It is hidden by default. -->
+
+
+                        <div class="atv__card"  id="template-card" style="display: none;">
+                            <p class="atv__title">Tên hoạt động</p>
+                            <div class="atv__subtitle">
+                                <div class="atv_info">
+                                    <div class="atv__date">
+                                        <i class='bx bx-calendar-event date__icon'></i>
+                                        <span class="date__label">Ngày tháng</span>
+                                    </div>
+                                    <div class="atv__status">Trạng thái</div>
+                                </div>
+                                <a href="#" class="atv__button_link">
+                                    <button class="atv__button">
+                                        <i class='bx bxs-cloud-download download__icon'></i>
+                                        <span class="atv__button-text">Tải xuống</span>
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                        <div id="activities-container"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!--=============== MAIN JS ===============-->
+        <script src="./assets/js/main.js"></script>
+        
+    </body>
+</html>
