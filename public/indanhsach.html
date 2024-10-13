@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>IN DANH SÁCH</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        body {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 13pt;
+            width: calc(210mm - 4.5cm); /* A4 width - (left + right margin) */
+            min-height: calc(297mm - 4cm); /* A4 height - (top + bottom margin) */
+            box-sizing: border-box;
+        }
+        .header {
+            display: grid;
+            grid-template-columns: 65% 35%;
+        }
+        .header-left {
+            padding: 10px;
+        }
+        .header-right {
+            padding: 10px;
+        }
+        .header-text {
+            text-align: center;
+            margin: 0;
+            line-height: 1.5;
+        }
+        .date {
+            text-align: right;
+            margin-bottom: 28px;
+            font-style: italic;
+        }
+        .title {
+            text-align: center;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            page-break-inside: avoid; /* Tránh tình trạng orphan rows */
+        }
+        td:nth-child(1) {
+            text-align: center;
+        }
+        td:nth-child(2),
+        td:nth-child(3),
+        td:nth-child(4) {
+            text-align: left;
+        }
+        td:nth-child(2) {
+            text-transform: capitalize;
+        }
+        td:nth-child(3) {
+            text-transform: uppercase;
+        }
+        .footer {
+            padding-bottom: 50px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            text-align: center;
+            page-break-before: avoid; /* Tránh tình trạng footer ở một mình trang cuối */
+            page-break-inside: avoid; /* Tránh ngắt trang giữa các trang */
+        }
+        .footer-section {
+            width: 45%;
+            padding: 10px;
+        }
+        .control-panel {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-family: 'Manrope';
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px 25px;
+            border: 1px solid #eeeeee;
+            border-radius: 15px;
+            padding-bottom: 25px;
+            z-index: 1000;
+        }
+        .control-panel div {
+            margin: 10px 0;
+        }
+        @media print {
+            .control-panel {
+                display: none;
+            }
+            .th-member {
+                display: none; /* Ẩn phần thead khi in */
+            }
+            @page {
+                margin: 2cm 2cm 2cm 2.5cm;
+            }
+            #qrCode {
+                margin-top: 65px;
+                display: block;
+            }
+        }
+        .fake-header {
+            font-weight: bold; /* Chữ đậm */
+            text-align: center; /* Căn giữa */
+        }
+        .fake-header td {
+            text-transform: capitalize;
+            text-align: center; /* Căn giữa cho tất cả các ô trong tiêu đề giả */
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="control-panel">
+        <h3 style="margin-bottom: 0; padding: 0;">IN DANH SÁCH</h3>
+        <h3 style="margin-top: 0; padding: 0;">Bảng điều khiển</h3>
+        <div>
+            <label>Ngày:</label>
+            <input style="border-radius: 10px; padding: 6px 15px; font-size: 16px; color: rgb(0, 0, 0); background-color: #ffffff; border: 1px solid #313138; font-weight: 500; font-family: 'Manrope';" type="date" id="dateInput">
+        </div>
+        <div>
+            <label>Tên hoạt động:</label>
+            <input style="border-radius: 10px; padding: 6px 15px; font-size: 16px; color: rgb(0, 0, 0); background-color: #ffffff; border: 1px solid #313138; font-weight: 500; font-family: 'Manrope';" type="text" id="activityInput" placeholder="Nhập tên hoạt động">
+        </div>
+        <div>
+            <label>Import CSV:</label>
+            <input style="font-family: 'Manrope';" type="file" id="csvFile" accept=".csv">
+        </div>
+        <div>
+            <button style="border-radius: 10px; padding: 8px 20px; font-size: 16px; color: white; background-color: #2c78db; border: 0px; font-weight: bold; font-family: 'Manrope';" onclick="addFakeHeader(); window.print()"><i class='bx bx-printer' ></i>  In</button>
+        </div>
+        <div>
+            <button style="border-radius: 10px; padding: 6px 15px; font-size: 16px; color: white; background-color: #313138; border: 0px; font-weight: 500; font-family: 'Manrope';" onclick="addRow()"><i class='bx bx-table'></i> Thêm hàng</button>
+        </div>
+        <div>
+            <button style="border-radius: 10px; padding: 6px 15px; font-size: 16px; color: white; background-color: #228b57; border: 0px; font-family: 'Manrope';" onclick="refreshPage()"><i class='bx bx-refresh'></i> Làm mới trang</button>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="header-left">
+            <p class="header-text">HỘI SINH VIÊN TRƯỜNG ĐẠI HỌC TRÀ VINH</p>
+            <p class="header-text">
+                <strong>BCN CLB TIẾNG ANH KHÔNG CHUYÊN</strong>
+            </p>
+        </div>
+        <div class="header-right">
+        </div>
+    </div>
+    <div class="date" id="documentDate">
+        Trà Vinh, ngày ... tháng ... năm 2024
+    </div>
+
+    <div class="title">
+        DANH SÁCH<br>
+        <span id="activityTitle">Tên hoạt động</span>
+    </div>
+
+    <table id="memberTable">
+        <thead class="th-member">
+            <tr>
+                <th>STT</th>
+                <th>Họ Tên</th>
+                <th>Lớp</th>
+                <th>MSSV</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <div class="footer">
+        <div class="footer-section">
+            <strong>XÁC NHẬN CỦA HSV TRƯỜNG</strong><br>
+            CHỦ TỊCH<br><br><br>
+            <div id="qrCode" style="width: 50px; height: 50px;"></div>
+        </div>
+        <div class="footer-section">
+            <strong>TM. BCN CÂU LẠC BỘ</strong><br>
+            CHỦ NHIỆM
+        </div>
+    </div>
+
+    <script>
+        // Cập nhật ngày tháng
+        const dateInput = document.getElementById('dateInput');
+        dateInput.addEventListener('change', function() {
+            const date = new Date(this.value);
+            const day = date.getDate();
+            const month = date.getMonth() + 1;
+            const year = date.getFullYear();
+            document.getElementById('documentDate').textContent = 
+                `Trà Vinh, ngày ${day} tháng ${month} năm ${year}`;
+        });
+
+        // Cập nhật tên hoạt động
+        const activityInput = document.getElementById('activityInput');
+    activityInput.addEventListener('input', function() {
+        document.getElementById('activityTitle').innerHTML = this.value.replace(/\n/g, '<br>') || 'Tên hoạt động';
+    });
+
+        // Xử lý file CSV
+        document.getElementById('csvFile').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(event) {
+                const csvData = event.target.result;
+                const rows = csvData.split('\n');
+                const tableBody = document.querySelector('#memberTable tbody');
+                tableBody.innerHTML = '';
+
+                for (let i = 1; i < rows.length; i++) {
+                    if (rows[i].trim() === '') continue;
+
+                    const columns = rows[i].split(',');
+                    const row = tableBody.insertRow();
+
+                    // STT tự động
+                    const sttCell = row.insertCell(0);
+                    sttCell.textContent = i;
+
+                    // Chuyển tên thành "Capital Each Word"
+                    const hotenCell = row.insertCell(1);
+                    hotenCell.textContent = capitalizeEachWord(columns[1]?.trim() || ''); // Cột Họ Tên
+
+                    // Thêm cột lớp
+                    const lopCell = row.insertCell(2);
+                    lopCell.textContent = columns[2]?.trim() || ''; // Cột Lớp
+
+                    // Thêm cột MSSV
+                    const mssvCell = row.insertCell(3);
+                    mssvCell.textContent = columns[3]?.trim() || ''; // Cột MSSV
+
+                    // Add event listener for Enter key to each editable cell
+                    [hotenCell, lopCell, mssvCell].forEach(cell => {
+                        cell.contentEditable = true;
+                        cell.addEventListener('keydown', function(event) {
+                            if (event.key === 'Enter') {
+                                event.preventDefault();
+                                sortTableByClass();
+                                // Xóa các hàng trống sau khi nhập dữ liệu và nhấn Enter
+                                removeEmptyRows();
+                                // Cập nhật lại STT sau khi xóa các hàng trống
+                                updateRowNumbers();
+                            }
+                        });
+                    });
+                }
+
+                // Sắp xếp theo lớp
+                sortTableByClass();
+                // Xóa các hàng trống
+                removeEmptyRows();
+                // Cập nhật lại STT sau khi xóa các hàng trống
+                updateRowNumbers();
+            };
+
+            reader.readAsText(file);
+        });
+
+        // Hàm chuyển chuỗi sang "Capital Each Word" chính xác với tiếng Việt
+        function capitalizeEachWord(str) {
+            return str.toLowerCase().replace(/(?:^|\s)\S/g, function(match) {
+                return match.toUpperCase();
+            });
+        }
+
+        // Hàm kiểm tra hàng trống
+        function isRowEmpty(row) {
+            const hoten = row.cells[1].textContent.trim();
+            const lop = row.cells[2].textContent.trim();
+            const mssv = row.cells[3].textContent.trim();
+            return hoten === '' || lop === '' || mssv === '';
+        }
+
+        // Hàm xóa các hàng trống
+        function removeEmptyRows() {
+            const tableBody = document.querySelector('#memberTable tbody');
+            const rows = Array.from(tableBody.rows);
+
+            rows.forEach(row => {
+                if (isRowEmpty(row)) {
+                    tableBody.removeChild(row);
+                }
+            });
+        }
+
+        // Hàm sắp xếp bảng theo lớp và loại bỏ hàng trống
+        function sortTableByClass() {
+            const tableBody = document.querySelector('#memberTable tbody');
+            const rows = Array.from(tableBody.rows);
+
+            // Loại bỏ hàng trống
+            removeEmptyRows();
+
+            // Sắp xếp các hàng còn lại
+            rows.sort((a, b) => {
+                const classA = a.cells[2].textContent;
+                const classB = b.cells[2].textContent;
+                return classA.localeCompare(classB);
+            });
+
+            // Xóa các hàng hiện tại
+            while (tableBody.firstChild) {
+                tableBody.removeChild(tableBody.firstChild);
+            }
+
+            // Thêm lại các hàng đã sắp xếp
+            rows.forEach((row, index) => {
+                row.cells[0].textContent = index + 1;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Hàm thêm hàng tiêu đề giả
+        function addFakeHeader() {
+            const tableBody = document.querySelector('#memberTable tbody');
+            const fakeHeader = document.createElement('tr');
+            fakeHeader.className = 'fake-header'; // Thêm lớp cho hàng tiêu đề giả
+
+            const sttCell = document.createElement('td');
+            sttCell.textContent = 'STT';
+            fakeHeader.appendChild(sttCell);
+            
+            const nameCell = document.createElement('td');
+            nameCell.textContent = 'Họ Tên';
+            fakeHeader.appendChild(nameCell);
+            
+            const classCell = document.createElement('td');
+            classCell.textContent = 'Lớp';
+            fakeHeader.appendChild(classCell);
+            
+            const mssvCell = document.createElement('td');
+            mssvCell.textContent = 'MSSV';
+            fakeHeader.appendChild(mssvCell);
+            
+            // Thêm hàng tiêu đề giả vào đầu bảng
+            tableBody.insertBefore(fakeHeader, tableBody.firstChild);
+        }
+
+        // Điều chỉnh nội dung trước khi in để đảm bảo trang cuối có ít nhất 3 hàng và footer
+        function adjustLastPage() {
+            const table = document.getElementById('memberTable');
+            const rows = table.getElementsByTagName('tr');
+            const footer = document.querySelector('.footer');
+            const minRowsOnLastPage = 3;
+
+            // Function to check if the footer is on the last page
+            function isFooterOnLastPage() {
+                const footerRect = footer.getBoundingClientRect();
+                return footerRect.bottom <= window.innerHeight;
+            }
+
+            // Function to move rows to the last page
+            function moveRowsToLastPage() {
+                let rowsToMove = [];
+                for (let i = rows.length - 1; i >= 0; i--) {
+                    rowsToMove.unshift(rows[i]);
+                    if (rowsToMove.length >= minRowsOnLastPage) {
+                        break;
+                    }
+                }
+                rowsToMove.forEach(row => table.appendChild(row));
+            }
+
+            // Adjust rows before printing
+            window.addEventListener('beforeprint', () => {
+                if (!isFooterOnLastPage()) {
+                    moveRowsToLastPage();
+                }
+            });
+        }
+
+        // Call the function to adjust the last page
+        adjustLastPage();
+
+        // Generate QR code
+        function generateQRCode() {
+            const qrCodeContainer = document.getElementById('qrCode');
+            new QRCode(qrCodeContainer, {
+                text: "https://clbtakc.web.app/giayxacnhan.html",
+                width: 70,
+                height: 70
+            });
+        }
+
+        // Call the function to generate the QR code
+        generateQRCode();
+
+        // Hàm thêm hàng mới
+        function addRow() {
+            const tableBody = document.querySelector('#memberTable tbody');
+            const row = tableBody.insertRow();
+
+            // STT tự động
+            const sttCell = row.insertCell(0);
+            sttCell.textContent = tableBody.rows.length + 1;
+
+            // Họ Tên
+            const hotenCell = row.insertCell(1);
+            hotenCell.contentEditable = true;
+            hotenCell.textContent = 'Nhập họ tên';
+
+            // Lớp
+            const lopCell = row.insertCell(2);
+            lopCell.contentEditable = true;
+            lopCell.textContent = 'Nhập lớp';
+
+            // MSSV
+            const mssvCell = row.insertCell(3);
+            mssvCell.contentEditable = true;
+            mssvCell.textContent = 'Nhập MSSV';
+
+            // Add event listener for Enter key to each editable cell
+            [hotenCell, lopCell, mssvCell].forEach(cell => {
+                cell.addEventListener('keydown', function(event) {
+                    if (event.key === 'Enter') {
+                        event.preventDefault();
+                        sortTableByClass();
+                        // Xóa các hàng trống sau khi nhập dữ liệu và nhấn Enter
+                        removeEmptyRows();
+                        // Cập nhật lại STT sau khi xóa các hàng trống
+                        updateRowNumbers();
+                    }
+                });
+            });
+
+            // Sắp xếp lại bảng theo lớp sau khi thêm hàng mới
+            sortTableByClass();
+            // Xóa các hàng trống
+            removeEmptyRows();
+            // Cập nhật lại STT sau khi xóa các hàng trống
+            updateRowNumbers();
+        }
+
+        // Add event listener for Enter key to existing editable cells
+        document.querySelectorAll('#memberTable tbody td[contenteditable="true"]').forEach(cell => {
+            cell.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    sortTableByClass();
+                    // Xóa các hàng trống sau khi nhập dữ liệu và nhấn Enter
+                    removeEmptyRows();
+                    // Cập nhật lại STT sau khi xóa các hàng trống
+                    updateRowNumbers();
+                }
+            });
+        });
+
+        // Hàm cập nhật lại STT
+        function updateRowNumbers() {
+            const tableBody = document.querySelector('#memberTable tbody');
+            const rows = Array.from(tableBody.rows);
+            rows.forEach((row, index) => {
+                row.cells[0].textContent = index + 1;
+            });
+        }
+        function refreshPage() {
+        location.reload();
+    }
+    </script>
+</body>
+</html>
