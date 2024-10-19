@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-* {
-  font-family: 'Roboto', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+body {
+  
+  font-family: 'Be Vietnam Pro', sans-serif;
+  background-color: #343a40;
 }
-.nav-underline .nav-link.active {
-  max-width: 180px;
-  color: #ff739d;
-}
+
 .hero-section {
   background-image: url('https://cdn.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_1403/https://www.tvu.edu.vn/wp-content/uploads/2021/12/dh-tra-vinh-tiep-tuc-1-1.jpg');
   background-size: cover;
@@ -35,7 +36,7 @@
   height: 500px;
   object-fit: cover;
 }
-h2 {
+.home_sectiontitle {
   color: #ff739d;
 }
 footer {
@@ -51,21 +52,92 @@ footer {
   margin-bottom: 20px;
 }
 .download-btn {
+  display: inline-flex;
+  align-items: center;
   font-weight: Medium;
-  padding: 5px 14px;
-  border-radius: 12px;
+  padding: 5px 13px;
   background-color: #3a8bf5;
   color: white;
+
+  background-image: linear-gradient(to right, #4568DC 0%, #B06AB3  51%, #4568DC  100%);
+  text-align: center;
+  cursor: pointer;
+  background-size: 200% auto;
+  transition: 0.5s;          
+  border-radius: 10px;
+
 }
 
 .download-btn:hover {
-  background-color: #1ccc91;
-  color: white;
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }
 
 .activity_card {
   border: 1px solid #ececec;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(56, 56, 56);
   border-radius: 15px;
+
 }
+
+
+
+.act_card-name {
+  color: #ffe2ec;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  
+}
+.act_card-date {
+  color: #d8d8d8;
+  margin-bottom: 8px;
+  font-size: 16px;
+  
+}
+
+.navbar {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.nav-link {
+  color: azure;
+}
+.nav-bold .nav-link.active {
+  font-weight: bold;
+  max-width: auto;
+  color: #ff739d;
+}
+
+.nav-icon {
+  font-weight: 500;
+  font-size: 18px;
+  padding-right: 5px;
+  margin-bottom: 0;
+}
+
+.act_title {
+  background: -webkit-linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 1000;
+  text-transform: uppercase;
+  font-size: 24px;
+  margin-bottom: 3px;
+}
+
+.act_subtitle {
+  color: #d8d8d8;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.bxs-cloud-download {
+  margin-right: 5px;
+  font-size: 22px;
+}
+
+
