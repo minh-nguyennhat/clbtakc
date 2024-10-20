@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&display=swap');
 body {
-  
   font-family: 'Be Vietnam Pro', sans-serif;
-  background-color: #343a40;
+  background-color: hsl(0, 0%, 96%);
+  line-height: 1.2;
 }
 
 .hero-section {
@@ -52,19 +52,20 @@ footer {
   margin-bottom: 20px;
 }
 .download-btn {
+  font-size: 15px;
   display: inline-flex;
   align-items: center;
   font-weight: Medium;
-  padding: 5px 13px;
+  padding: 4px 12px;
   background-color: #3a8bf5;
   color: white;
 
-  background-image: linear-gradient(to right, #4568DC 0%, #B06AB3  51%, #4568DC  100%);
+  background-image: linear-gradient(to right, #00c6ff 0%, #0072ff  51%, #00c6ff  100%);
   text-align: center;
   cursor: pointer;
   background-size: 200% auto;
   transition: 0.5s;          
-  border-radius: 10px;
+  border-radius: 16px;
 
 }
 
@@ -75,9 +76,9 @@ footer {
 }
 
 .activity_card {
-  border: 1px solid #ececec;
+  border: 1px solid #eeeeee;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: rgb(56, 56, 56);
+  background-color: rgb(253, 253, 253);
   border-radius: 15px;
 
 }
@@ -85,16 +86,18 @@ footer {
 
 
 .act_card-name {
-  color: #ffe2ec;
+  line-height: 1.2;
+  color: #8a3e57;
   font-size: 18px;
-  font-weight: 500;
-  margin: 0;
+  font-weight: 600;
+  margin-bottom: 4px;
   
 }
 .act_card-date {
-  color: #d8d8d8;
+  font-weight: 500;
+  color: #4d4d4d;
   margin-bottom: 8px;
-  font-size: 16px;
+  font-size: 15px;
   
 }
 
@@ -104,7 +107,7 @@ footer {
 }
 
 .nav-link {
-  color: azure;
+  color: rgb(51, 51, 51);
 }
 .nav-bold .nav-link.active {
   font-weight: bold;
@@ -120,24 +123,33 @@ footer {
 }
 
 .act_title {
-  background: -webkit-linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
+  background: -webkit-linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 1000;
+  font-weight: 800;
   text-transform: uppercase;
   font-size: 24px;
   margin-bottom: 3px;
 }
 
 .act_subtitle {
-  color: #d8d8d8;
+  color: #5f5f5f;
   font-weight: 400;
   font-size: 16px;
 }
 
 .bxs-cloud-download {
   margin-right: 5px;
-  font-size: 22px;
+  font-size: 18px;
 }
 
+@media (max-width: 576px) {
+  .act_title {
+    font-size: 20px;
+  }
+
+  .act_subtitle {
+    font-size: 14px;
+  }
+}
 
