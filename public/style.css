@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&display=swap');
+@font-face {
+  font-family: 'Misans Latin VF'; /* Tên font bạn muốn sử dụng */
+  src: url('./fonts/MiSans Latin VF.ttf');
+}
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: hsl(0, 0%, 96%);
+  font-family: 'Misans Latin VF', sans-serif;
+  background-color: hwb(0 100% 0%);
   line-height: 1.2;
 }
 
@@ -76,18 +76,20 @@ footer {
 }
 
 .activity_card {
-  border: 1px solid #eeeeee;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: rgb(253, 253, 253);
+  border: 0;
+  background-color: rgb(236, 236, 236);
   border-radius: 15px;
 
 }
 
+.card-body {
+  padding: 16px 22px;
+}
 
 
 .act_card-name {
   line-height: 1.2;
-  color: #000000;
+  color: #240d49;
   font-size: 16px;
   font-weight: 500;
   margin-bottom: 4px;
@@ -102,15 +104,15 @@ footer {
 }
 
 .navbar {
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .nav-link {
   color: rgb(51, 51, 51);
 }
 .nav-bold .nav-link.active {
-  font-weight: bold;
+  font-weight: 500;
   max-width: auto;
   color: #ff739d;
 }
@@ -123,7 +125,7 @@ footer {
 }
 
 .act_title {
-  background: -webkit-linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+  background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 800;
