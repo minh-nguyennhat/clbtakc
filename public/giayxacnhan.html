@@ -1,144 +1,250 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Website của CLB Tiếng Anh Không Chuyên - Trường Đại học Trà Vinh">
-<meta name="keywords" content="clb tieng anh khong chuyen">
-<meta name="Author" content="MINTEK TECHNOLOGY & COMMUNICATION COMPANY LIMITED">
-<meta name="copyright" content="CLB Tiếng Anh Không Chuyên">
-<meta name="google-site-verification" content="Bq9uhgmTyIGvBRjMtsvgt77sxbMoB821vW722Te-1Nw">
-  <title>Giấy Xác Nhận | CLB Tiếng Anh Không Chuyên TVU</title>
-  <link rel="icon" href="https://lh3.googleusercontent.com/pw/AP1GczMamnes-ZZAB6KHAuRXP81rUPN9UwlZuKiwhaYfxbedGzxE0GUXihntuBiG5bNtfjaNwGyH6xfidPMQOb98BiGCsItMdhZk-XGrhaz-pTSI5uyI9_QBkE7CTwuUoH4n3GLrA8u3U2FWjgfjgSXrGkS1" type="image/x-icon">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giấy xác nhận | CLB Tiếng Anh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gradient: linear-gradient(135deg, #6366f1, #8b5cf6, #d946ef);
+            --surface: #ffffff;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --surface: #111827;
+                --text-primary: #f3f4f6;
+                --text-secondary: #9ca3af;
+                --shadow: rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--surface);
+            color: var(--text-primary);
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 100% 0%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 0% 100%, rgba(217, 70, 239, 0.1) 0%, transparent 50%);
+        }
+
+        .header {
+            text-align: center;
+            padding: 4rem 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: -1.5rem auto 2rem;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border-radius: 1rem;
+            border: none;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 1rem;
+            box-shadow: 
+                0 4px 6px -1px var(--shadow),
+                0 2px 4px -2px var(--shadow);
+            transition: transform 0.2s;
+        }
+
+        .search-bar:focus {
+            outline: none;
+            transform: translateY(-2px);
+        }
+
+        .activities {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .activity-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .activity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 20px 25px -5px var(--shadow),
+                0 8px 10px -6px var(--shadow);
+        }
+
+        .activity-name {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .activity-date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 0.75rem;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+
+        .download-btn:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 1.8rem;
+            }
+
+            .activities {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
- <!--Header-->
- <nav class='navbar navbar-expand-lg sticky-top'>
-  <div class='container-fluid'>
-    <a class='navbar-brand' href='#'><img alt='logo' height='40' src='https://lh3.googleusercontent.com/pw/AP1GczMamnes-ZZAB6KHAuRXP81rUPN9UwlZuKiwhaYfxbedGzxE0GUXihntuBiG5bNtfjaNwGyH6xfidPMQOb98BiGCsItMdhZk-XGrhaz-pTSI5uyI9_QBkE7CTwuUoH4n3GLrA8u3U2FWjgfjgSXrGkS1' width='40'/></a>
-    <button aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation' class='navbar-toggler' data-bs-target='#navbarSupportedContent' data-bs-toggle='collapse' type='button'>
-      <span class='navbar-toggler-icon'>
-    </button>
-    <div class='collapse navbar-collapse' id='navbarSupportedContent'>
-      <ul class='navbar-nav me-auto mb-2 mb-lg-0 nav-bold'>
-        <li class='nav-item'>
-          <a class='nav-link' href='/index.html'><i class='bx bx-home-alt-2 nav-icon'></i>Trang chủ</a>
-        </li>
-        <li class='nav-item'>
-          <a class='nav-link' href='/giayxacnhan.html'><i class='bx bx-file nav-icon'></i>Giấy xác nhận</a>
-        </li>
-      </ul>
-      <form class='d-flex' role='search'>
-        <input aria-label='Search' class='form-control me-2' placeholder='Tìm kiếm' type='search'>
-        <button class='btn btn-secondary' style='background-color: #ff739d; border: 0;' type='submit'>
-          <i class='bx bx-search'></i>
+    <header class="header">
+        <h1 class="title">GIẤY XÁC NHẬN HOẠT ĐỘNG</h1>
+        <p class="subtitle">CLB Tiếng Anh Không Chuyên</p>
+    </header>
+
+    <div class="search-container">
+        <input type="text" 
+               id="search" 
+               class="search-bar"
+               placeholder="Tìm kiếm hoạt động...">
     </div>
-  </div>
-</nav>
 
- <header class="text-white text-center py-3" style="margin-bottom: -40px;">
-  <img src="/images/act_header_img.svg" class="img-fluid act_header_img" alt="..." style="max-width: 350px; margin-top: -30px; margin-bottom: -20px;">
-    <h1 class="act_title" style="color: #ff739d;">Giấy Xác Nhận Hoạt Động</h1>
-    <h2 class="act_subtitle">Danh sách các hoạt động bạn đã tham gia</h2>
-  </header>
+    <div class="activities" id="activity-list"></div>
 
-  <!--Activity Cards Section-->
-  <section class="container mt-5" style="max-width: 800px; padding: 0 20px;"">
-    <div class="row" id="activity-container">
-      <!--Activity Cards will be appended here-->
-    </div>
-  </section>
+    <script>
+        let allActivities = [];
 
+        async function fetchActivities() {
+            const response = await fetch('https://raw.githubusercontent.com/minh-nguyennhat/clbtakc/refs/heads/main/public/hoatdong.csv');
+            const csv = await response.text();
+            
+            Papa.parse(csv, {
+                delimiter: '|',
+                complete: function(results) {
+                    allActivities = results.data
+                        .slice(1)
+                        .filter(row => row.length === 3)
+                        .map(row => ({
+                            name: row[0],
+                            date: row[1],
+                            link: row[2]
+                        }))
+                        .sort((a, b) => {
+                            const dateA = parseDate(a.date);
+                            const dateB = parseDate(b.date);
+                            return dateB - dateA;
+                        });
+                    
+                    displayActivities(allActivities);
+                }
+            });
+        }
 
-  <script>
-    // Function to fetch and display CSV data
-    async function loadActivities() {
-      try {
-        const response = await fetch('https://raw.githubusercontent.com/minh-nguyennhat/clbtakc/refs/heads/main/public/hoatdong.csv');
-        const data = await response.text();
-        const rows = data.split('\n').slice(1); // Skip the header row
-  
-        // Parse CSV data and store activities
-        const activities = rows.map(row => {
-          const [activity_name, time, download_link] = row.split('|');
-          return { activity_name, time, download_link };
-        }).filter(activity => activity.activity_name); // Filter out empty rows
-  
-        console.log("Parsed Activities:", activities); // Log activities for debugging
-  
-        // Sort by time in descending order
-        activities.sort((a, b) => {
-          const dateA = new Date(a.time.split('/').reverse().join('-')); // Convert dd/mm/yyyy to yyyy-mm-dd
-          const dateB = new Date(b.time.split('/').reverse().join('-'));
-          return dateB - dateA; // Sort in descending order
+        function parseDate(dateStr) {
+            const [day, month, year] = dateStr.split('/');
+            return new Date(year, month - 1, day);
+        }
+
+        function displayActivities(activities) {
+            const container = document.getElementById('activity-list');
+            container.innerHTML = '';
+            
+            activities.forEach((activity) => {
+                const card = document.createElement('div');
+                card.className = 'activity-card';
+                card.innerHTML = `
+                    <h2 class="activity-name">${activity.name}</h2>
+                    <div class="activity-date">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        ${activity.date}
+                    </div>
+                    <a href="${activity.link}" class="download-btn" target="_blank" download>
+                        Tải xuống
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                    </a>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        const searchInput = document.getElementById('search');
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const filtered = allActivities.filter(activity => 
+                activity.name.toLowerCase().includes(searchTerm)
+            );
+            displayActivities(filtered);
         });
-  
-        // Check if activities are sorted correctly
-        console.log("Sorted Activities:", activities); // Log sorted activities for debugging
-  
-        // Populate activity cards
-        const container = document.getElementById('activity-container');
-        activities.forEach(activity => {
-          const formattedDate = formatDate(activity.time); // Format the date
-          const downloadLink = activity.download_link.includes('drive.google.com') 
-            ? activity.download_link.replace(/\/file\/d\/([^\/]+).*/, `/uc?export=download&id=$1`) 
-            : activity.download_link; // Convert to direct download link if it's a Google Drive link
-          const activityCard = `
-            <div class="col-md-12 activity-card">
-              <div class="card activity_card">
-                <div class="card-body">
-                  <p class="act_card-name">${activity.activity_name}</p>
-                  <p class="act_card-date">
-                    <i class='bx bx-calendar date-icon'></i> Thời gian: ${formattedDate}
-                  </p>
-                  <a href="${downloadLink}" class="btn download-btn">
-                    <i class='bx bxs-cloud-download' ></i> Download
-                  </a>
-                </div>
-              </div>
-            </div>
-          `;
-          container.innerHTML += activityCard;
-        });
-      } catch (error) {
-        console.error('Error fetching or processing CSV data:', error);
-      }
-    }
-  
-    // Format date function
-    function formatDate(dateString) {
-      const [day, month, year] = dateString.split('/');
-      return `${day}/${month}/${year}`;
-    }
 
-    // Load activities on page load
-    window.onload = loadActivities;
-  </script>
-
-  <!-- Footer -->
-  <footer class="mt-5">
-    <p>CLB Tiếng Anh Không Chuyên &copy; 2024</p>
-  </footer>
-
-  <script>
-    // Lấy URL hiện tại
-    const currentUrl = window.location.pathname;
-
-    // Lấy tất cả các liên kết trong nav
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    // Lặp qua các liên kết và so sánh với URL hiện tại
-    navLinks.forEach(link => {
-      if (link.getAttribute('href') === currentUrl) {
-        link.classList.add('active');
-      }
-    });
-  </script>
-  
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        fetchActivities();
+    </script>
+    <script src="https://unpkg.com/papaparse@latest/papaparse.min.js"></script>
 </body>
 </html>
